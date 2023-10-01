@@ -1,7 +1,19 @@
 
 const GifExpertApp = () => {
     return (
-        <div>GifExpertApp</div>
+        <>
+            {/* Titulo */}
+            <h1>GifExpertApp</h1>
+
+            {/* Input */}
+
+
+            {/* Listado de GIF */}
+            {/* GIF item */}
+
+
+
+        </>
     )
 }
 
