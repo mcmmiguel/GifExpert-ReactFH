@@ -6,6 +6,7 @@ import { AddCategory } from "../../src/components/AddCategory";
 describe('Pruebas en <AddCategory />', () => {
 
 
+
     test('Debe cambiar el valor en la caja de texto', () => {
 
         render(<AddCategory onNewCategory={() => { }} />);
@@ -35,6 +36,19 @@ describe('Pruebas en <AddCategory />', () => {
         expect(onNewCategory).toHaveBeenCalledWith(inputValue);
 
         screen.debug();
+
+    })
+
+    test('No debe llamar al onNewCategory si el input está vacío', () => {
+
+        const onNewCategory = jest.fn();
+
+        render(<AddCategory onNewCategory={onNewCategory} />);
+
+        const form = screen.getByRole('form');
+        fireEvent.submit(form);
+
+        expect(onNewCategory).not.toHaveBeenCalled();
 
     })
 
